@@ -1,59 +1,91 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>迷宫</title>
-    
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-  </head>
+    <title>迷宫</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
 
+        .maze-container {
+            position: relative;
+            width: 800px;
+            height: 300px;
+        }
 
+        .direction {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+            user-select: none;
+        }
 
-<div class="row-fluid">
-  <div class="span12">
-    <h2> 这里是迷宫的起点</h2>
+        .direction:hover {
+            color: #FF1437;
+            transform: scale(1.2);
+        }
 
+        #up {
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
+        #down {
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-<p>你是第一次来到这里，还是因为踩进了陷阱呢？</p>
+        #left {
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-<p>挫折不是旅途的结束，而是通往目标的垫脚石。</p>
-	  
-<p>尝试抵达迷宫的4/11/20/24号位置，获取神秘线索哦！（不要手动输网址求求惹qwq）</p>
+        #right {
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-<p>点击下方按钮选择你下一步的方向。</p>
+        .room-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
 
-</div>
-      </div>
-      <hr>
-      <footer>
-        <p><small>
-        </small></p>
-      </footer>
+    </style>
+</head>
+<body>
+    <div class="maze-container">
+        <div class="room-info">
+            <h2>这里是迷宫的起点</h2>
+            <p>你是第一次来到这里，还是因为踩进了陷阱呢？ </p>
 
-    </div>
+            <p>挫折不是旅途的结束，而是通往目标的垫脚石。</p>
 
-    
-   <body>
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	    <div class="navbar">
-	      <div class="navbar-inner">
-	        <div class="container-narrow">
-	         			  <ul class="nav">
-				  <li><a href="https://rumia-test.github.io/rumia/maze/0/">左</a></li>
-				  <li><a href="https://rumia-test.github.io/rumia/maze/5/">上</a></li>
-      			          <li><a href="https://rumia-test.github.io/rumia/maze/1/">右</a></li>
-				  <li><a href="https://rumia-test.github.io/rumia/maze/0/">下</a></li>
-				   </ul>
-	        </div>
-	      </div>
-	    </div>
-	</nav>
+            <p>尝试抵达迷宫的4/11/20/24号位置，获取神秘线索哦！（不要手动输网址求求惹qwq）</p>
+            
 
-    <div class="container-narrow">
-
-      <div class="content">
+            <p>点击下方按钮选择你下一步的方向。</p>
+        </div>
         
-
-</body></html>
+        <a href="https://rumia-test.github.io/rumia/maze/5/" class="direction" id="up">⬆️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/0/" class="direction" id="down">⬇️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/0/" class="direction" id="left">⬅️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/1/" class="direction" id="right">➡️</a>
+    </div>
+</body>
+</html>
