@@ -1,56 +1,88 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <title>迷宫</title>
-    
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-  </head>
+    <title>迷宫</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #b6dee0;
+            font-family: Arial, sans-serif;
+        }
 
+        .maze-container {
+            position: relative;
+            width: 800px;
+            height: 300px;
+        }
 
+        .direction {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+            user-select: none;
+        }
 
-<div class="row-fluid">
-  <div class="span12">
-    <h2> 这里是迷宫的某一处</h2>
+        .direction:hover {
+            color: #00FF00;
+            transform: scale(1.2);
+        }
 
+        #up {
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
+        #down {
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-<p>继续加油，别走偏了哦！</p>
+        #left {
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
+        #right {
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-<p>点击下方按钮选择你下一步的方向。</p>
+        .room-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            text-align: center;
+        }
 
-</div>
-      </div>
-      <hr>
-      <footer>
-        <p><small>
-        </small></p>
-      </footer>
+    </style>
+</head>
+<body>
+    <div class="maze-container">
+        <div class="room-info">
+            <h2>这里是迷宫的某一处</h2>
+
+            <p>继续加油，别走偏了哦！</p>
+
+            <p>点击下方按钮选择你下一步的方向。</p>
+        </div>
+        
+        <a href="https://rumia-test.github.io/rumia/maze/7/" class="direction" id="left">⬅️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/13/" class="direction" id="up">⬆️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/9/" class="direction" id="right">➡️</a>
+        <a href="https://rumia-test.github.io/rumia/maze/3/" class="direction" id="down">⬇️</a>
 
     </div>
-
-    
-   <body>
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	    <div class="navbar">
-	      <div class="navbar-inner">
-	        <div class="container-narrow">
-	         			  <ul class="nav">
-				 <li><a href="https://rumia-test.github.io/rumia/maze/7/">左</a></li>
-				  <li><a href="https://rumia-test.github.io/rumia/maze/13/">上</a></li>
-      			          <li><a href="https://rumia-test.github.io/rumia/maze/9/">右</a></li>
-				  <li><a href="https://rumia-test.github.io/rumia/maze/3/">下</a></li>
-				   </ul>
-	        </div>
-	      </div>
-	    </div>
-	</nav>
-
-    <div class="container-narrow">
-
-      <div class="content">
-        
-
-</body></html>
+</body>
+</html>
